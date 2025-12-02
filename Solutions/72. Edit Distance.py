@@ -5,7 +5,16 @@ class Solution(object):
             return len(word2)
         if not word2:
             return len(word1)
-
+        
+        if len(word1) == 1 and len(word2) == 1:
+            return len(word2) + 1 if word1 != word2 else 0
+        
+        
+        if len(word2) == 1:
+            return len(word1) + 1 if word2 not in word1 else len(word1) - 1
+        if len(word1) == 1:
+            return len(word2) + 1 if word1 not in word2 else len(word2) - 1
+        
         # Initialize the DP table
         dp = [[0] * (len(word2) + 1) for _ in range(len(word1) + 1)]
 
