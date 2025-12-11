@@ -77,21 +77,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int climbStairs(int n) {
-    if(n <= 2) return n;
+// class Solution {
+// public:
+//     bool isSubsequence(string s, string t) {
+//         int len1 = s.size();
+//         int len2 = t.size();
 
-    int a = 1, b = 2;   
-    for(int i = 3; i <= n; i++){
-        int c = a + b;
-        a = b;
-        b = c;
+//         int p1 = 0;
+//         int p2 = 0;
+
+//         while(p1 < len1 && p2 < len2){
+//             if(s[p1] == t[p2]){
+//                 p1++;
+//                 p2++;
+//             }else{
+//                 p2++;
+//             }
+//         }
+//         if(p1 == len1) return true;
+//         return false;
+
+//     }
+// };
+
+
+class Solution {
+public:
+    double findMaxAverage(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end(), greater<int>());
+        int avg = 0;
+        for(int i = 0 ; i < k ; i++){
+            avg += nums[i];
+        }
+        return avg / k ;
     }
-    return b;
-}
+};
+
 
 int main() {
-    int n = 6 ;
-    cout << climbStairs(n);
+    string s = "abc";
+    string t = "ahbgdc";
+    vector <int> nums = {1,12,-5,-6,50,3};
+    int k = 4;
+    Solution S; 
+    cout << S.findMaxAverage(nums , k);
 
     return 0;
 }
