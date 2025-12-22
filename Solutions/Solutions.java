@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.*;
 
 public class Solutions {
     public int findMinArrowShots(int[][] points) {
@@ -41,6 +42,7 @@ public class Solutions {
         }
         return nums[0];
     }
+
 
     public static void main(String[] args) {
         Solutions sol = new Solutions();
